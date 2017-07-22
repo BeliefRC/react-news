@@ -33,22 +33,6 @@ export default class PCNewsImagesBlock extends React.Component {
         const newsList = news.length
             ?
             news.map((newsItem, index) => (
-                {
-                    /* <Card key={index} className="images-block-item">
-                                        <Link to={`details/${newsItem.uniquekey}`} target='_blank'>
-
-                                            <div className="custom-image">
-                                                <img width="100%"
-                                                     title={newsItem.title}
-                                                     src={newsItem.thumbnail_pic_s} alt={newsItem.title}/>
-                                            </div>
-                                            <div className="custom-card">
-                                                <h3 title={newsItem.title} style={styleH3}>{newsItem.title}</h3>
-                                                <p>{newsItem.author_name}</p>
-                                            </div>
-                                        </Link>
-                                    </Card>*/
-                },
                     <div className="images-block-item" key={index}>
                         <Link to={`details/${newsItem.uniquekey}`} target='_blank'>
                             <div className="custom-image">

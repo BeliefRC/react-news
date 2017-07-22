@@ -18,19 +18,25 @@ export default class MobileContainer extends React.Component {
                                 <div><img src={require('../../images/carousel_4.png')} alt=""/></div>
                             </Carousel>
                         </div>
-                        <MobileNewsList type="top" count={20}/>
+                        <div className="first_list">
+                            <MobileNewsList type="top" count={20}/>
+                        </div>
                     </TabPane>
 
                     <TabPane tab="社会" key="2">
-
+                        <MobileNewsList type="shehui" count={20}/>
                     </TabPane>
                     <TabPane tab="国内" key="3">
+                        <MobileNewsList type="guonei" count={20}/>
 
                     </TabPane>
                     <TabPane tab="国际" key="4">
+                        <MobileNewsList type="guoji" count={20}/>
 
                     </TabPane>
                     <TabPane tab="娱乐" key="5">
+                        <MobileNewsList type="yule" count={20}/>
+
                     </TabPane>
                 </Tabs>
             </div>
