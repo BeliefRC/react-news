@@ -1,0 +1,9 @@
+.container{
+    width: 100%;
+}
+.container .carousel{
+    width: 100%;
+}
+.container .carousel img{
+    width: 100%!important;
+}

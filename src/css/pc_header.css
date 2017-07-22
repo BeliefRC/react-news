@@ -1,0 +1,31 @@
+.ant-row{
+    display: flex;
+}
+.logo{
+    margin-top: 5px;
+    align-items: center;
+    display: flex;
+}
+.logo img{
+    width: 48px;
+    height: 48px;
+}
+.logo span{
+    font-size: 24px;
+    margin-left: 15px;
+}
+.register{
+    margin-left: 100px;
+}
+/***********注册表单样式********************/
+#components-form-demo-normal-login .login-form  {
+    max-width: 300px;
+}
+#components-form-demo-normal-login .login-form-forgot {
+    float: right;
+}
+#components-form-demo-normal-login .login-form-button {
+    width: 100%;
+}
+/***********注册表单样式********************/
+

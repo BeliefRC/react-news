@@ -1,0 +1,72 @@
+.container {
+    padding-top: 15px;
+}
+
+.left-container {
+    float: left;
+    width: 400px;
+}
+
+/*走马灯*/
+.carousel {
+    width: 400px;
+    height: 260px;
+    float: left;
+}
+
+.carousel img {
+    width: 400px;
+    height: 260px;
+}
+
+.ant-carousel .slick-slide {
+    text-align: center;
+    height: 260px;
+    line-height: 260px;
+    background: #364d79;
+    overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+    color: #fff;
+}
+
+/*图片块新闻*/
+.images-block {
+    float: left;
+    margin-top: 10px;
+}
+
+.images-block-item {
+    float: left;
+    width: 133px;
+}
+
+.ant-card-body {
+    padding: 0;
+}
+.custom-image img {
+    margin: 3px auto;
+    display: block;
+    height: 94px;
+    width: 100px;
+}
+
+/*选项卡片新闻*/
+.tabs_news {
+    margin-left: 40px;
+    display: inline-block;
+    width: 460px;
+    float: left;
+}
+
+.tabs_news li {
+    height: 27px;
+    line-height: 27px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 417px;
+    float: left;
+    text-overflow: ellipsis;
+}
