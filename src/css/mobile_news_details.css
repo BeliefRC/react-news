@@ -1,0 +1,25 @@
+.details_container {
+
+    width: 100%;
+}
+
+.src {
+    color: #2db7f5;
+}
+
+.txt {
+    font-size: .3rem;
+}
+
+.img {
+    text-indent: 0 !important;
+}
+
+.img-wrap img {
+    width: 100%;
+    margin-left: 0;
+}
+
+.ant-back-top {
+    right: .5rem !important;
+}

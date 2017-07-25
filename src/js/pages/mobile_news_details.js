@@ -1,9 +1,8 @@
 import React from 'react'
-import {Row, Col, BackTop} from 'antd'
-import PCNewsImagesBlock from '../components/pc_news_images_block'
-import '.././../css/pc_news_details.css'
+import {BackTop} from 'antd'
+import '../../css/mobile_news_details.css'
 
-export default class PCNewsDetails extends React.Component {
+export default class MobileNewsDetails extends React.Component {
     // 构造
     constructor(props) {
         super(props);
@@ -24,6 +23,7 @@ export default class PCNewsDetails extends React.Component {
                     newsItem: json
                 });
                 document.title = this.state.newsItem.title + " - React News | React 驱动的新闻平台";
+
             })
     }
 
@@ -33,18 +33,8 @@ export default class PCNewsDetails extends React.Component {
 
     render() {
         return (
-            <div>
-                <Row>
-                    <Col span={2}/>
-                    <Col span={16}>
-                        <div className="item_article" dangerouslySetInnerHTML={this.getNewsItem()}></div>
-                    </Col>
-                    <Col span={4}>
-                        <PCNewsImagesBlock cartTitle="新闻头条" type="top" count={18}/>
-
-                    </Col>
-                    <Col span={2}/>
-                </Row>
+            <div className="details_container">
+                <div className="item_article" dangerouslySetInnerHTML={this.getNewsItem()}></div>
                 <BackTop/>
             </div>
         )

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card} from 'antd'
+import {Card, Spin} from 'antd'
 import {Link} from 'react-router'
 
 export default class PCNewsList extends React.Component {
@@ -30,7 +30,7 @@ export default class PCNewsList extends React.Component {
                 </li>
             ))
             :
-            '没加载到任何新闻';
+            <Spin/>;
         return (
             <div>
                 <Card>

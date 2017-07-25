@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router'
+import {Spin} from 'antd'
 
 export default class MobileNewsList extends React.Component {
     // 构造
@@ -29,7 +30,7 @@ export default class MobileNewsList extends React.Component {
                 <section key={index} className="m_article list-item special_section clearfix">
                     <Link to={`details/${newsItem.uniquekey}`}>
                         <div className="m_article_img">
-                            <img src={newsItem.thumbnail_pic_s} alt={newsItem.title} />
+                            <img src={newsItem.thumbnail_pic_s} alt={newsItem.title}/>
                         </div>
                         <div className="m_article_info">
                             <div className="m_article_title">
@@ -46,7 +47,7 @@ export default class MobileNewsList extends React.Component {
                 </section>
             ))
             :
-            '没加载到任何新闻';
+            <Spin/>;
         return (
             <div>
                 {newsList}

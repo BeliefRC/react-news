@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card} from 'antd'
+import {Card, Spin} from 'antd'
 import {Link} from 'react-router'
 
 export default class PCNewsImagesBlock extends React.Component {
@@ -47,7 +47,7 @@ export default class PCNewsImagesBlock extends React.Component {
 
             ))
             :
-            '没加载到任何新闻';
+            <Spin/>;
         return (
             <div className="images-block">
                 <Card title={this.props.cartTitle}>

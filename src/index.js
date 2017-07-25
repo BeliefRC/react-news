@@ -8,7 +8,7 @@ import MobileIndex from "./js/pages/mobile_index";
 import MobileContainer from './js/components/mobile_container'
 import PCNewsContainer from './js/components/pc_news_container'
 import PCNewsDetails from './js/pages/pc_news_details'
-import Test from './js/pages/test'
+import PCNewsImagesBlock from './js/pages/mobile_news_details'
 
 ReactDOM.render(
     <div>
@@ -28,8 +28,7 @@ ReactDOM.render(
             <Router history={hashHistory}>
                 <Route path='/' component={MobileIndex}>
                     <IndexRoute component={MobileContainer}/>
-                    <Route path='test' component={Test}></Route>
-
+                    <Route path='details/:uniquekey' component={PCNewsImagesBlock}></Route>
                 </Route>
             </Router>
 
