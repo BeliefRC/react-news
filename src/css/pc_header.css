@@ -1,31 +1,47 @@
-.ant-row{
+.ant-row {
     display: flex;
 }
-.logo{
+
+.logo {
     margin-top: 5px;
     align-items: center;
     display: flex;
 }
-.logo img{
+
+.logo img {
     width: 48px;
     height: 48px;
 }
-.logo span{
+
+.logo span {
     font-size: 24px;
     margin-left: 15px;
 }
-.register{
+
+.register {
     margin-left: 100px;
 }
+
+.username {
+    width: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 !important;
+}
+
 /***********注册表单样式********************/
-#components-form-demo-normal-login .login-form  {
+#components-form-demo-normal-login .login-form {
     max-width: 300px;
 }
+
 #components-form-demo-normal-login .login-form-forgot {
     float: right;
 }
+
 #components-form-demo-normal-login .login-form-button {
     width: 100%;
 }
+
 /***********注册表单样式********************/
 

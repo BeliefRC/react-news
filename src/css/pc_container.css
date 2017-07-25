@@ -39,7 +39,7 @@
 
 .images-block-item {
     float: left;
-    width: 126px;
+    width: 114px;
 }
 
 .ant-card-body {
@@ -50,6 +50,9 @@
     display: block;
     height: 94px;
     width: 100px;
+}
+.left_images_block .custom-image{
+    margin-left: 6px;
 }
 
 /*选项卡片新闻*/
