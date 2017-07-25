@@ -1,0 +1,21 @@
+.title {
+    font-size: 30px;
+}
+
+.src {
+    color: #2db7f5;
+}
+
+.section {
+    font-size: 18px;
+    text-indent: 2em;
+    margin: 10px 0;
+}
+
+.img-wrap{
+    padding-bottom: 5px !important;
+}
+.img-wrap img {
+    width: 400px;
+    height: 300px;
+}

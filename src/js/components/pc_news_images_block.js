@@ -22,7 +22,7 @@ export default class PCNewsImagesBlock extends React.Component {
 
     render() {
         const styleH3 = {
-             width:'100px',
+            width: '100px',
             whiteSpace: "nowrap",
             overflow: "hidden",
             textOverflow: "ellipsis",
@@ -33,17 +33,17 @@ export default class PCNewsImagesBlock extends React.Component {
         const newsList = news.length
             ?
             news.map((newsItem, index) => (
-                    <div className="images-block-item" key={index}>
-                        <Link to={`details/${newsItem.uniquekey}`} target='_blank'>
-                            <div className="custom-image">
-                                <img src={newsItem.thumbnail_pic_s} alt={newsItem.title}/>
-                            </div>
-                            <div className="custom-card">
-                                <h3 style={styleH3}>{newsItem.title}</h3>
-                                <p style={{textAlign:'center'}}>{newsItem.author_name}</p>
-                            </div>
-                        </Link>
-                    </div>
+                <div className="images-block-item" key={index}>
+                    <Link to={`details/${newsItem.uniquekey}`} target='_blank'>
+                        <div className="custom-image">
+                            <img src={newsItem.thumbnail_pic_s} alt={newsItem.title}/>
+                        </div>
+                        <div className="custom-card">
+                            <h3 style={styleH3}>{newsItem.title}</h3>
+                            <p style={{textAlign: 'center'}}>{newsItem.author_name}</p>
+                        </div>
+                    </Link>
+                </div>
 
             ))
             :
