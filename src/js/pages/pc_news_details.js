@@ -1,6 +1,7 @@
 import React from 'react'
 import {Row, Col, BackTop} from 'antd'
 import PCNewsImagesBlock from '../components/pc_news_images_block'
+import CommonComments from '../components/common_comments'
 import '.././../css/pc_news_details.css'
 
 export default class PCNewsDetails extends React.Component {
@@ -38,6 +39,7 @@ export default class PCNewsDetails extends React.Component {
                     <Col span={2}/>
                     <Col span={16}>
                         <div className="item_article" dangerouslySetInnerHTML={this.getNewsItem()}></div>
+                        <CommonComments uniquekey={this.props.params.uniquekey}/>
                     </Col>
                     <Col span={4}>
                         <PCNewsImagesBlock cartTitle="新闻头条" type="top" count={18}/>

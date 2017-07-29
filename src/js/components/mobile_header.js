@@ -32,6 +32,14 @@ class MobileHeader extends React.Component {
         };
     }
 
+    //存储用户信息
+    componentWillMount() {
+        if (localStorage.userId !== '') {
+            this.setState({hasLogin: true});
+            this.setState({userNickName: localStorage.userNickName, userId: localStorage.userId});
+        }
+    };
+
 // 切换导航选项卡
     handleClick = (e) => {
         // 如果点击登录注册要弹出对话框
@@ -92,6 +100,8 @@ class MobileHeader extends React.Component {
                     .then(response => response.json())
                     .then(json => {
                         this.setState({userNickName: json.NickUserName, userid: json.UserId});
+                        localStorage.userId= json.UserId;
+                        localStorage.userNickName = json.NickUserName;
                     });
                 if (this.state.action === "login") {
                     this.setState({hasLogin: true});
@@ -106,7 +116,7 @@ class MobileHeader extends React.Component {
     };
 // 退出登录
     logout = () => {
-        localStorage.userid = '';
+        localStorage.userId = '';
         localStorage.userNickName = '';
         this.setState({hasLogin: false});
     };

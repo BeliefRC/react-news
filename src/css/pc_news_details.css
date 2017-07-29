@@ -12,10 +12,11 @@
     margin: 10px 0;
 }
 
-.img-wrap{
+.img-wrap {
     padding-bottom: 5px !important;
 }
+
 .img-wrap img {
-    width: 400px;
-    height: 300px;
+    width: 310px!important;
+    height: 280px;
 }

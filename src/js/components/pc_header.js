@@ -106,7 +106,7 @@ class PCHeader extends React.Component {
                             userNickName: json.NickUserName,
                             UserId: json.UserId
                         });
-                        localStorage.userId= json.UserId;
+                        localStorage.userId = json.UserId;
                         localStorage.userNickName = json.NickUserName;
                     });
                 if (this.state.action === "login") {
@@ -117,6 +117,11 @@ class PCHeader extends React.Component {
                 this.setState({
                     modalShow: false,
                 })
+            }
+            else {
+                message.error("请求失败！");
+                return false
+
             }
         });
     };

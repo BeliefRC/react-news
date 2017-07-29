@@ -1,5 +1,6 @@
 import React from 'react'
 import {BackTop} from 'antd'
+import CommonComments from '../components/common_comments'
 import '../../css/mobile_news_details.css'
 
 export default class MobileNewsDetails extends React.Component {
@@ -35,6 +36,7 @@ export default class MobileNewsDetails extends React.Component {
         return (
             <div className="details_container">
                 <div className="item_article" dangerouslySetInnerHTML={this.getNewsItem()}></div>
+                <CommonComments uniquekey={this.props.params.uniquekey}/>
                 <BackTop/>
             </div>
         )

@@ -1,0 +1,32 @@
+.comment-area {
+    width: 100%;
+}
+
+.comment-card {
+    margin-top: 5px;
+    width: 100%;
+
+}
+
+.ant-card-head {
+    height: 38px;
+    line-height: 38px;
+}
+
+.ant-card-body > p {
+    text-indent: 2em;
+    padding: 5px 0;
+}
+
+.ant-form-item-control-wrapper {
+    width: 100%;
+    padding: 0 20px;
+
+}
+
+.comment-text {
+    max-width: 1000% !important;
+}
+.collect{
+    margin-left: 5%;
+}
