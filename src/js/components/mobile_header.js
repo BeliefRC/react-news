@@ -25,7 +25,7 @@ class MobileHeader extends React.Component {
         this.state = {
             current: "top",//默认显示头条
             modalShow: false,//默认弹窗不显示
-            hasLogin: true,//是否登录
+            hasLogin: false,//是否登录
             userNickName: 'admin',//用户名
             userId: 0,//用户id
             action: 'login'
@@ -131,7 +131,7 @@ class MobileHeader extends React.Component {
         const {getFieldDecorator} = this.props.form;
         const userShow = this.state.hasLogin
             ?
-            <Link to="/test">
+            <Link to="userCenter">
                 <Icon type="user"/>
             </Link>
             :

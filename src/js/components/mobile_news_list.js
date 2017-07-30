@@ -24,7 +24,6 @@ export default class MobileNewsList extends React.Component {
 
     render() {
         const {news} = this.state;
-        console.dir(news);
         const newsList = news.length
             ?
             news.map((newsItem, index) => (

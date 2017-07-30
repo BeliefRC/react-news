@@ -2,7 +2,7 @@
  * Created by 10343 on 2017/7/13.
  */
 import React from 'react'
-// import {Link} from 'react-router'
+import {Link} from 'react-router'
 import {
     Row
     , Col
@@ -138,7 +138,7 @@ class PCHeader extends React.Component {
         const userShow = this.state.hasLogin ?
             <Menu.Item key="logout">
                 <Button className="username">{this.state.userNickName}</Button>
-                <Button type="primary">个人中心</Button>
+                <Link to="userCenter"><Button type="primary">个人中心</Button></Link>
                 <Button type='dashed' onClick={this.logout}>退出</Button>
             </Menu.Item>
             :
