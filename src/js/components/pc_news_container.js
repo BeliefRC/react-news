@@ -2,6 +2,7 @@ import React from 'react'
 import {Row, Col, Carousel, Tabs} from 'antd'
 import PCNewsList from './pc_news_list'
 import PCNewsImagesBlock from './pc_news_images_block'
+import PCProducts from './pc_products'
 import '../../css/pc_container.css'
 
 const TabPane = Tabs.TabPane;
@@ -32,8 +33,9 @@ export default class PCNewsContainer extends React.Component {
                                 <TabPane tab="国际新闻" key="2"><PCNewsList type='guoji' count={20}/></TabPane>
                             </Tabs>
                         </div>
-                        <PCNewsImagesBlock cartTitle="社会头条" type="shehui" count={20}/>
-                        <PCNewsImagesBlock cartTitle="娱乐头条" type="yule" count={20} />
+                        <PCProducts/>
+                        <PCNewsImagesBlock cartTitle="社会头条" type="shehui" count={22}/>
+                        <PCNewsImagesBlock cartTitle="娱乐头条" type="yule" count={22} />
 
                     </Col>
                     <Col span={2}></Col>

@@ -1,0 +1,16 @@
+.ulist{
+    text-indent: -.5em;
+    display: inline-block;
+    margin-top: 32px;
+    margin-left: 20px;
+    font-size: 13px;
+}
+.ulist li{
+    list-style: circle;
+    line-height: 26px;
+}
+.bold-item{
+    font-weight: bold;
+    font-size: 14px;
+    list-style: square;
+}
