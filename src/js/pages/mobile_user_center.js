@@ -8,6 +8,8 @@ export default class MobileUserCenter extends React.Component {
         super(props);
         // 初始状态
         this.state = {
+            comments: '',
+            collections: '',
             previewVisible: false,
             previewImage: '',
             fileList: [{
@@ -19,6 +21,26 @@ export default class MobileUserCenter extends React.Component {
         };
     }
 
+    componentDidMount() {
+        const myFetchOptions = {
+            method: 'GET'
+        };
+        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getusercomments&userid=" + localStorage.userId, myFetchOptions)
+            .then(response => response.json())
+            .then(json => {
+                this.setState({
+                    comments: json
+                })
+            });
+        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getuc&userid=" + localStorage.userId, myFetchOptions)
+            .then(response => response.json())
+            .then(json => {
+                this.setState({
+                    collections: json
+                })
+            })
+    }
+
     handleCancel = () => this.setState({
         previewVisible: false
     });
@@ -28,6 +50,7 @@ export default class MobileUserCenter extends React.Component {
             previewImage: file.url || file.thumbUrl,
             previewVisible: true,
         });
+
     };
 
     handleChange = ({fileList}) => this.setState({
@@ -38,7 +61,9 @@ export default class MobileUserCenter extends React.Component {
         const {
             previewVisible,
             previewImage,
-            fileList
+            fileList,
+            comments,
+            collections,
         } = this.state;
         const uploadButton = (
             <div>
@@ -46,11 +71,40 @@ export default class MobileUserCenter extends React.Component {
                 <div className="ant-upload-text">Upload</div>
             </div>
         );
+
+        //评论列表
+        const commentsList = comments.length ?
+            comments.map((comment, index) => (
+                    <Card key={index} title={` ${comment.datetime} 评论了文章 ${comment.uniquekey}`}
+                          extra={<a target="_blank" href={`/#/details/${comment.uniquekey}`}>查看</a>}>
+                        <p>{comment.Comments}</p>
+                    </Card>
+                )
+            )
+
+            :
+            '还没有评论任何新闻';
+
+        //收藏列表
+        const collectionsList = collections.length ?
+            collections.map((collection, index) => (
+                    <Card key={index} title={<a target="_blank" href={`/#/details/${collection.uniquekey}`}>收藏了《 {collection.Title}》</a>}>
+                    </Card>
+                )
+            )
+
+            :
+            '还没有收藏任何新闻';
+
         return (
             <div>
                 <Tabs defaultActiveKey="1">
-                    <TabPane tab="我的收藏" key="1">Content of Tab Pane 1</TabPane>
-                    <TabPane tab="我的评论" key="2">Content of Tab Pane 2</TabPane>
+                    <TabPane tab="我的收藏" key="1">
+                        {collectionsList}
+                    </TabPane>
+                    <TabPane tab="我的评论" key="2">
+                        {commentsList}
+                    </TabPane>
                     <TabPane tab="我的头像" key="3">
                         <Upload
                             action="//jsonplaceholder.typicode.com/posts/"

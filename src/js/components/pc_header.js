@@ -93,7 +93,6 @@ class PCHeader extends React.Component {
         };
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                console.log('Received values of form: ', values);
 
                 fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=" + this.state.action
                     + "&username=" + values.userName + "&password=" + values.password
@@ -108,12 +107,15 @@ class PCHeader extends React.Component {
                         });
                         localStorage.userId = json.UserId;
                         localStorage.userNickName = json.NickUserName;
+                    })
+                    .catch(function (err) {
+                        console.warn("Fetch错误:" + err);
+                        message.error("请求失败！");
+
                     });
                 if (this.state.action === "login") {
                     this.setState({hasLogin: true});
                 }
-
-                message.success("请求成功！");
                 this.setState({
                     modalShow: false,
                 })
@@ -132,13 +134,14 @@ class PCHeader extends React.Component {
         this.setState({hasLogin: false});
     };
 
+
     render() {
         // 用于和表单进行双向绑定
         const {getFieldDecorator} = this.props.form;
         const userShow = this.state.hasLogin ?
             <Menu.Item key="logout">
                 <Button className="username">{this.state.userNickName}</Button>
-                <Link to="userCenter"><Button type="primary">个人中心</Button></Link>
+                <Link to="userCenter" style={{display: 'inline'}}><Button type="primary">个人中心</Button></Link>
                 <Button type='dashed' onClick={this.logout}>退出</Button>
             </Menu.Item>
             :

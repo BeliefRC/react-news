@@ -8,6 +8,8 @@ export default class PCUserCenter extends React.Component {
         super(props);
         // 初始状态
         this.state = {
+            comments: '',
+            collections:'',
             previewVisible: false,
             previewImage: '',
             fileList: [{
@@ -19,10 +21,31 @@ export default class PCUserCenter extends React.Component {
         };
     }
 
+    componentDidMount() {
+        const myFetchOptions = {
+            method: 'GET'
+        };
+        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getusercomments&userid=" + localStorage.userId, myFetchOptions)
+            .then(response => response.json())
+            .then(json => {
+                this.setState({
+                    comments: json
+                })
+            });
+        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getuc&userid="  + localStorage.userId, myFetchOptions)
+            .then(response => response.json())
+            .then(json => {
+                this.setState({
+                    collections: json
+                })
+            })
+    }
+
+    //点击关闭图片预览
     handleCancel = () => this.setState({
         previewVisible: false
     });
-
+    //预览图片
     handlePreview = (file) => {
         this.setState({
             previewImage: file.url || file.thumbUrl,
@@ -38,7 +61,9 @@ export default class PCUserCenter extends React.Component {
         const {
             previewVisible,
             previewImage,
-            fileList
+            fileList,
+            comments,
+            collections
         } = this.state;
         const uploadButton = (
             <div>
@@ -46,12 +71,43 @@ export default class PCUserCenter extends React.Component {
                 <div className="ant-upload-text">Upload</div>
             </div>
         );
+        //评论列表
+        const commentsList = comments.length ?
+            comments.map((comment,index) => (
+                <Card key={index} title={`于 ${comment.datetime} 评论了文章 ${comment.uniquekey}`}
+                      extra={<a target="_blank" href={`/#/details/${comment.uniquekey}`}>查看</a>}>
+                    <p>{comments.Comments}</p>
+                </Card>
+                )
+            )
+
+            :
+            '还没有评论任何新闻';
+
+        //收藏列表
+        const collectionsList = collections.length ?
+            collections.map((collection,index) => (
+                    <Card key={index} title={` 收藏了文章《 ${collection.Title}》`}
+                          extra={<a target="_blank" href={`/#/details/${collection.uniquekey}`}>查看</a>}>
+                    </Card>
+                )
+            )
+
+            :
+            '还没有收藏任何新闻';
+
         return (
             <div>
                 <Tabs defaultActiveKey="1">
-                    <TabPane tab="我的收藏" key="1">Content of Tab Pane 1</TabPane>
-                    <TabPane tab="我的评论" key="2">Content of Tab Pane 2</TabPane>
-                    <TabPane tab="我的头像" key="3">
+                    <TabPane tab="我的收藏" key="collects">
+                        <div>
+                            {collectionsList}
+                        </div>
+                    </TabPane>
+                    <TabPane tab="我的评论" key="comments">
+                        {commentsList}
+                    </TabPane>
+                    <TabPane tab="我的头像" key="head">
                         <div className="clearfix">
                             <Upload
                                 action="//jsonplaceholder.typicode.com/posts/"

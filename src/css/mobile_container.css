@@ -8,6 +8,9 @@
 .container .carousel img{
     width: 100%!important;
 }
+.ant-card-head-title{
+    font-size: 0.25rem;
+}
 
 .first_list{
     margin-top: 260px;
