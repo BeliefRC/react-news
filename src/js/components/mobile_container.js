@@ -39,13 +39,10 @@ export default class MobileContainer extends React.Component {
             let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;   //被隐藏上方像素
             let clientHeight = document.documentElement.clientHeight;   //浏览器视口高度
             let bottom = totalHeight - scrollTop - clientHeight;
-            // console.log(totalHeight,scrollTop,clientHeight,bottom);
             if (bottom < 1) {
-                console.log('ok');
                 _this.setState({
                     newsCount: 30
                 })
-                console.log(_this.state.newsCount);
             }
         })
     }

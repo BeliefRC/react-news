@@ -25,14 +25,14 @@ export default class PCUserCenter extends React.Component {
         const myFetchOptions = {
             method: 'GET'
         };
-        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getusercomments&userid=" + localStorage.userId, myFetchOptions)
+        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getusercomments&userid=" + sessionStorage.userId, myFetchOptions)
             .then(response => response.json())
             .then(json => {
                 this.setState({
                     comments: json
                 })
             });
-        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getuc&userid="  + localStorage.userId, myFetchOptions)
+        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getuc&userid="  + sessionStorage.userId, myFetchOptions)
             .then(response => response.json())
             .then(json => {
                 this.setState({

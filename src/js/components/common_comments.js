@@ -41,7 +41,7 @@ class CommonComments extends React.Component {
     handleSubmit(e) {
         // 页面开始向api提交数据
         e.preventDefault();
-        if (!localStorage.userId) {
+        if (!sessionStorage.userId) {
             this.errorInfo();
             return false
         }
@@ -52,20 +52,19 @@ class CommonComments extends React.Component {
             this.props.form.validateFields((err, values) => {
                 if (!err) {
                     console.log('Received values of form: ', values);
-                    fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=comment&userid=" + localStorage.userId + "&uniquekey=" + this.props.uniquekey + "&commnet=" + values.remark, myFetchOptions)
+                    fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=comment&userid=" + sessionStorage.userId + "&uniquekey=" + this.props.uniquekey + "&commnet=" + values.remark, myFetchOptions)
                         .then(response => response.json())
                         .then(json => {
                             this.componentDidMount();
                             this.info()
                         })
-
-                }
+                    }
             });
         }
     }
 
     addUserCollection = () => {
-        if (!localStorage.userId) {
+        if (!sessionStorage.userId) {
             this.errorInfo();
             return false
         }
@@ -73,7 +72,7 @@ class CommonComments extends React.Component {
             let myFetchOptions = {
                 method: 'GET'
             };
-            fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=uc&userid=" + localStorage.userId + "&uniquekey=" + this.props.uniquekey, myFetchOptions)
+            fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=uc&userid=" + sessionStorage.userId + "&uniquekey=" + this.props.uniquekey, myFetchOptions)
                 .then(response => response.json())
                 .then(json => {
                     //收藏成功以后进行一下全局的提醒

@@ -26,21 +26,28 @@ class MobileHeader extends React.Component {
             current: "top",//默认显示头条
             modalShow: false,//默认弹窗不显示
             hasLogin: false,//是否登录
-            userNickName: 'admin',//用户名
-            userId: 0,//用户id
+            userNickName: '',//用户名
+            userId: "",//用户id
             action: 'login'
         };
     }
 
     //存储用户信息
     componentWillMount() {
-        if (localStorage.userId !== '') {
+        console.log(sessionStorage.userId);
+        if (sessionStorage.userId !== undefined) {
             this.setState({hasLogin: true});
-            this.setState({userNickName: localStorage.userNickName, userId: localStorage.userId});
+            this.setState({userNickName: sessionStorage.userNickName, userId: sessionStorage.userId});
+            console.log(this.state.hasLogin);
+
         }
     };
 
-// 切换导航选项卡
+    componentDidMount() {
+        console.log(this.state.hasLogin);
+    }
+
+    // 切换导航选项卡
     handleClick = (e) => {
         // 如果点击登录注册要弹出对话框
         if (e.key === 'register') {
@@ -55,19 +62,19 @@ class MobileHeader extends React.Component {
             });
         }
     };
-// 单击对话框ok
+    // 单击对话框ok
     handleOk = (e) => {
         this.setState({
             modalShow: false,
         });
     };
-// 单击对话框取消
+    // 单击对话框取消
     handleCancel = (e) => {
         this.setState({
             modalShow: false,
         });
     };
-// 切换选项卡片时选择登录or注册
+    // 切换选项卡片时选择登录or注册
     callback = (key) => {
 
         if (key === '1') {
@@ -81,7 +88,7 @@ class MobileHeader extends React.Component {
             })
         }
     };
-// 提交表单
+    // 提交表单
     handleSubmit = (e) => {
         // 页面开始向api提交数据
         e.preventDefault();
@@ -100,8 +107,8 @@ class MobileHeader extends React.Component {
                     .then(response => response.json())
                     .then(json => {
                         this.setState({userNickName: json.NickUserName, userid: json.UserId});
-                        localStorage.userId= json.UserId;
-                        localStorage.userNickName = json.NickUserName;
+                        sessionStorage.userId = json.UserId;
+                        sessionStorage.userNickName = json.NickUserName;
                     });
                 if (this.state.action === "login") {
                     this.setState({hasLogin: true});
@@ -116,8 +123,8 @@ class MobileHeader extends React.Component {
     };
 // 退出登录
     logout = () => {
-        localStorage.userId = '';
-        localStorage.userNickName = '';
+        sessionStorage.userId = '';
+        sessionStorage.userNickName = '';
         this.setState({hasLogin: false});
     };
     //点击登录弹窗
@@ -129,13 +136,12 @@ class MobileHeader extends React.Component {
 
     render() {
         const {getFieldDecorator} = this.props.form;
-        const userShow = this.state.hasLogin
-            ?
+        const userShow = this.state.hasLogin ?
             <Link to="userCenter">
                 <Icon type="user"/>
             </Link>
             :
-            <Icon type="setting" onClick={this.login}/>;
+            <Icon type="user-add" onClick={this.login}/>;
         return (
             <div id="mobileheader">
                 <header>

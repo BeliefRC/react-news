@@ -29,17 +29,17 @@ class PCHeader extends React.Component {
             current: "top",//默认显示头条
             modalShow: false,//默认弹窗不显示
             hasLogin: false,//是否登录
-            userNickName: 'admin',//用户名
-            userId: 0,//用户id
+            userNickName: '',//用户名
+            userId: '',//用户id
             action: 'login'
         };
     }
 
 //存储用户信息
     componentWillMount() {
-        if (localStorage.userId !== '') {
+        if (sessionStorage.userId !== undefined) {
             this.setState({hasLogin: true});
-            this.setState({userNickName: localStorage.userNickName, userId: localStorage.userId});
+            this.setState({userNickName: sessionStorage.userNickName, userId: sessionStorage.userId});
         }
     };
 
@@ -105,8 +105,8 @@ class PCHeader extends React.Component {
                             userNickName: json.NickUserName,
                             UserId: json.UserId
                         });
-                        localStorage.userId = json.UserId;
-                        localStorage.userNickName = json.NickUserName;
+                        sessionStorage.userId = json.UserId;
+                        sessionStorage.userNickName = json.NickUserName;
                     })
                     .catch(function (err) {
                         console.warn("Fetch错误:" + err);
@@ -129,8 +129,8 @@ class PCHeader extends React.Component {
     };
     // 退出登录
     logout = () => {
-        localStorage.userId = '';
-        localStorage.userNickName = '';
+        sessionStorage.userId = '';
+        sessionStorage.userNickName = '';
         this.setState({hasLogin: false});
     };
 
