@@ -38,7 +38,7 @@ export default class PCNewsDetails extends React.Component {
                 <Row>
                     <Col span={2}/>
                     <Col span={16}>
-                        <div className="item_article" dangerouslySetInnerHTML={this.getNewsItem()}></div>
+                        <div className="item_article" dangerouslySetInnerHTML={this.getNewsItem()}/>
                         <CommonComments uniquekey={this.props.params.uniquekey}/>
                     </Col>
                     <Col span={4}>

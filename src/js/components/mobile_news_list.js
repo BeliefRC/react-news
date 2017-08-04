@@ -2,15 +2,18 @@ import React from 'react'
 import {Link} from 'react-router'
 import {Spin} from 'antd'
 
+
 export default class MobileNewsList extends React.Component {
     // 构造
     constructor(props) {
         super(props);
         // 初始状态
         this.state = {
-            news: ''
+            news: '',
         };
     }
+
+
 
     componentWillMount() {
         let myFetchOptions = {
@@ -21,6 +24,7 @@ export default class MobileNewsList extends React.Component {
             .then(response => response.json())
             .then(json => this.setState({news: json}));
     }
+
 
     render() {
         const {news} = this.state;
@@ -50,7 +54,7 @@ export default class MobileNewsList extends React.Component {
             <Spin/>;
         return (
             <div>
-                {newsList}
+                    {newsList}
             </div>
         )
     }

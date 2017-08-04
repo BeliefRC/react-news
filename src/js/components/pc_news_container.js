@@ -14,7 +14,7 @@ export default class PCNewsContainer extends React.Component {
         return (
             <div className="container">
                 <Row>
-                    <Col span={2}></Col>
+                    <Col span={2}/>
                     <Col span={20}>
                         <div className="left-container">
                             <div className="carousel">
@@ -38,7 +38,7 @@ export default class PCNewsContainer extends React.Component {
                         <PCNewsImagesBlock cartTitle="娱乐头条" type="yule" count={22} />
 
                     </Col>
-                    <Col span={2}></Col>
+                    <Col span={2}/>
                 </Row>
             </div>
         )

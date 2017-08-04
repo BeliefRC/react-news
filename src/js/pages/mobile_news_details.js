@@ -35,7 +35,7 @@ export default class MobileNewsDetails extends React.Component {
     render() {
         return (
             <div className="details_container">
-                <div className="item_article" dangerouslySetInnerHTML={this.getNewsItem()}></div>
+                <div className="item_article" dangerouslySetInnerHTML={this.getNewsItem()}/>
                 <CommonComments uniquekey={this.props.params.uniquekey}/>
                 <BackTop/>
             </div>

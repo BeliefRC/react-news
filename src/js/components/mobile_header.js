@@ -34,18 +34,14 @@ class MobileHeader extends React.Component {
 
     //存储用户信息
     componentWillMount() {
-        console.log(sessionStorage.userId);
         if (sessionStorage.userId !== undefined) {
             this.setState({hasLogin: true});
             this.setState({userNickName: sessionStorage.userNickName, userId: sessionStorage.userId});
-            console.log(this.state.hasLogin);
 
         }
     };
 
-    componentDidMount() {
-        console.log(this.state.hasLogin);
-    }
+
 
     // 切换导航选项卡
     handleClick = (e) => {
@@ -92,7 +88,7 @@ class MobileHeader extends React.Component {
     handleSubmit = (e) => {
         // 页面开始向api提交数据
         e.preventDefault();
-        var myFetchOptions = {
+        let myFetchOptions = {
             method: 'GET'
         };
         this.props.form.validateFields((err, values) => {
