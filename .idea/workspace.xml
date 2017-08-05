@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d06a500f-4985-4aa8-a08d-6feb6eb0922f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.4a49d843.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.4a49d843.js.map" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.ce53e552.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.ce53e552.js.map" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/asset-manifest.json" afterPath="$PROJECT_DIR$/build/asset-manifest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/index.html" afterPath="$PROJECT_DIR$/build/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/service-worker.js" afterPath="$PROJECT_DIR$/build/service-worker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/paths.js" afterPath="$PROJECT_DIR$/config/paths.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/components/mobile_header.js" afterPath="$PROJECT_DIR$/src/js/components/mobile_header.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/components/pc_header.js" afterPath="$PROJECT_DIR$/src/js/components/pc_header.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,7 +28,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="url.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="url.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/url/url.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -42,6 +36,26 @@
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mobile_header.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/components/mobile_header.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="139" column="32" lean-forward="false" selection-start-line="139" selection-start-column="32" selection-end-line="139" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pc_header.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/js/components/pc_header.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="160" column="31" lean-forward="true" selection-start-line="160" selection-start-column="31" selection-end-line="160" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,14 +139,12 @@
         <option value="$PROJECT_DIR$/src/js/pages/pc_user_center.js" />
         <option value="$PROJECT_DIR$/src/js/pages/mobile_user_center.js" />
         <option value="$PROJECT_DIR$/src/js/pages/mobile_index.js" />
-        <option value="$PROJECT_DIR$/src/js/components/pc_header.js" />
         <option value="$PROJECT_DIR$/src/css/pc_products.css" />
         <option value="$PROJECT_DIR$/src/js/components/pc_products.js" />
         <option value="$PROJECT_DIR$/src/js/components/pc_news_container.js" />
         <option value="$PROJECT_DIR$/src/js/components/common_comments.js" />
         <option value="$PROJECT_DIR$/src/js/pages/mobile_news_details.js" />
         <option value="$PROJECT_DIR$/src/js/pages/pc_news_details.js" />
-        <option value="$PROJECT_DIR$/src/js/components/mobile_header.js" />
         <option value="$PROJECT_DIR$/src/css/mobile_container.css" />
         <option value="$PROJECT_DIR$/node_modules/react-touch-loader/src/react-touch-loader.jsx" />
         <option value="$PROJECT_DIR$/src/js/components/mobile_container.js" />
@@ -141,6 +153,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/build/index.html" />
         <option value="$PROJECT_DIR$/config/paths.js" />
+        <option value="$PROJECT_DIR$/src/js/components/pc_header.js" />
+        <option value="$PROJECT_DIR$/src/js/components/mobile_header.js" />
       </list>
     </option>
   </component>
@@ -197,18 +211,20 @@
             <path>
               <item name="react-news" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-news" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-news" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-news" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-news" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-news" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -376,7 +392,7 @@
       <workItem from="1501855665729" duration="4219000" />
       <workItem from="1501940070156" duration="27000" />
       <workItem from="1501940153710" duration="3637000" />
-      <workItem from="1501946382591" duration="253000" />
+      <workItem from="1501946382591" duration="1091000" />
     </task>
     <task id="LOCAL-00001" summary="更新了手机版新闻列表显示">
       <created>1500701761621</created>
@@ -441,11 +457,18 @@
       <option name="project" value="LOCAL" />
       <updated>1501860702773</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="修改paths.js">
+      <created>1501946676645</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1501946676645</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178088000" />
+    <option name="totallyTimeSpent" value="178926000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -458,16 +481,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17336152" sideWeight="0.4948605" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2101293" sideWeight="0.512685" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49353448" sideWeight="0.49788582" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4234914" sideWeight="0.49788582" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19397463" sideWeight="0.5051395" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2349138" sideWeight="0.487315" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2349138" sideWeight="0.487315" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -552,7 +574,8 @@
     <MESSAGE value="优化登陆信息的存储，将用户信息存储到localStorage" />
     <MESSAGE value="增加用户评论与收藏功能" />
     <MESSAGE value="最后调优，删除不必要代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="最后调优，删除不必要代码" />
+    <MESSAGE value="修改paths.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改paths.js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -714,13 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/components/pc_header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="67" column="20" lean-forward="false" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/components/pc_news_list.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="636">
@@ -798,13 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/components/mobile_header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="36" column="43" lean-forward="false" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/components/pc_news_container.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -830,6 +839,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -871,6 +881,22 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/components/mobile_header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="139" column="32" lean-forward="false" selection-start-line="139" selection-start-column="32" selection-end-line="139" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/components/pc_header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="160" column="31" lean-forward="true" selection-start-line="160" selection-start-column="31" selection-end-line="160" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>

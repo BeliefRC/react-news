@@ -154,11 +154,11 @@ class PCHeader extends React.Component {
                 <Row>
                     <Col span={2}/>
                     <Col span={4}>
-                        <a href="/" className="logo">
+                        <Link to="/" className="logo">
                             <img src={require('../../images/logo.png')} alt=""/>
                             <span>ReactNews</span>
 
-                        </a>
+                        </Link>
                     </Col>
                     <Col span={16}>
                         {/*三种属性分别为菜单水平排布，单击切换卡片，将current属性传递给子组件，current代表当前标签*/}
