@@ -188,14 +188,13 @@ module.exports = {
                                 autoprefixer({
                                     browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 8', 'iOS >= 8', 'Android >= 4'],
                                 }),
-                                pxtorem({ rootValue: 100, propWhiteList: [] })
                             ],
                         },
                     },
                     {
                         loader: require.resolve('less-loader'),
                         options: {
-                            modifyVars: { "@primary-color": "#1DA57A" },
+                            modifyVars: {"@primary-color": "#1DA57A"},
                         },
                     },
                 ],
@@ -207,7 +206,9 @@ module.exports = {
                 include: paths.appSrc,
                 loader: require.resolve('babel-loader'),
                 options: {
-
+                    plugins: [
+                        ['import', {libraryName: 'antd', style: 'css'}],
+                    ],
                     // This is a feature of `babel-loader` for webpack (not Babel itself).
                     // It enables caching results in ./node_modules/.cache/babel-loader/
                     // directory for faster rebuilds.
