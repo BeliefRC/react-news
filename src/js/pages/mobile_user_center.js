@@ -25,20 +25,27 @@ export default class MobileUserCenter extends React.Component {
         const myFetchOptions = {
             method: 'GET'
         };
-        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getusercomments&userid=" + sessionStorage.userId, myFetchOptions)
-            .then(response => response.json())
-            .then(json => {
-                this.setState({
-                    comments: json
-                })
+        if (sessionStorage.userId) {
+
+            fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getusercomments&userid=" + sessionStorage.userId, myFetchOptions)
+                .then(response => response.json())
+                .then(json => {
+                    this.setState({
+                        comments: json
+                    })
+                }).catch((err) => {
+                console.log(err);
             });
-        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getuc&userid=" + sessionStorage.userId, myFetchOptions)
-            .then(response => response.json())
-            .then(json => {
-                this.setState({
-                    collections: json
-                })
+            fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getuc&userid=" + sessionStorage.userId, myFetchOptions)
+                .then(response => response.json())
+                .then(json => {
+                    this.setState({
+                        collections: json
+                    })
+                }).catch((err) => {
+                console.log(err);
             })
+        }
     }
 
     handleCancel = () => this.setState({
@@ -88,7 +95,8 @@ export default class MobileUserCenter extends React.Component {
         //收藏列表
         const collectionsList = collections.length ?
             collections.map((collection, index) => (
-                    <Card key={index} title={<a target="_blank" href={`/#/details/${collection.uniquekey}`}>收藏了《 {collection.Title}》</a>}>
+                    <Card key={index} title={<a target="_blank"
+                                                href={`/#/details/${collection.uniquekey}`}>收藏了《 {collection.Title}》</a>}>
                     </Card>
                 )
             )

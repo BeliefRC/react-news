@@ -2,7 +2,7 @@
  * Created by 10343 on 2017/7/15.
  */
 import React from 'react'
-import {Link} from 'react-router'
+import {Link,hashHistory} from 'react-router'
 import {
     Icon
     , Form
@@ -34,13 +34,12 @@ class MobileHeader extends React.Component {
 
     //存储用户信息
     componentWillMount() {
-        if (sessionStorage.userId !== undefined) {
+        if (sessionStorage.userId) {
             this.setState({hasLogin: true});
             this.setState({userNickName: sessionStorage.userNickName, userId: sessionStorage.userId});
 
         }
     };
-
 
 
     // 切换导航选项卡
@@ -105,20 +104,29 @@ class MobileHeader extends React.Component {
                         this.setState({userNickName: json.NickUserName, userid: json.UserId});
                         sessionStorage.userId = json.UserId;
                         sessionStorage.userNickName = json.NickUserName;
-                    });
-                if (this.state.action === "login") {
-                    this.setState({hasLogin: true});
-                }
+                        if (this.state.action === "login") {
+                            this.setState({hasLogin: true});
+                        }
+                    }).catch(function (err) {
+                    console.warn("Fetch错误:" + err);
+                    message.error("请求失败！");
+
+                });
 
                 message.success("请求成功！");
                 this.setState({
                     modalShow: false,
                 })
+            } else {
+                message.error("请求失败！");
+                return false
+
             }
         });
     };
 // 退出登录
     logout = () => {
+        hashHistory.push('/');
         sessionStorage.userId = '';
         sessionStorage.userNickName = '';
         this.setState({hasLogin: false});

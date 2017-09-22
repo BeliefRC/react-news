@@ -1,5 +1,6 @@
 import React from 'react'
 import {Tabs, Card, Upload, Icon, Modal} from 'antd'
+import {hashHistory} from 'react-router'
 
 const TabPane = Tabs.TabPane;
 export default class PCUserCenter extends React.Component {
@@ -21,24 +22,35 @@ export default class PCUserCenter extends React.Component {
         };
     }
 
+    componentWillMount() {
+        if(!sessionStorage.userId){
+            hashHistory.push('/')
+        }
+    }
     componentDidMount() {
         const myFetchOptions = {
             method: 'GET'
         };
-        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getusercomments&userid=" + sessionStorage.userId, myFetchOptions)
-            .then(response => response.json())
-            .then(json => {
-                this.setState({
-                    comments: json
-                })
-            });
-        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getuc&userid="  + sessionStorage.userId, myFetchOptions)
-            .then(response => response.json())
-            .then(json => {
-                this.setState({
-                    collections: json
-                })
-            })
+       if(sessionStorage.userId){
+           fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getusercomments&userid=" + sessionStorage.userId, myFetchOptions)
+               .then(response => response.json())
+               .then(json => {
+                   this.setState({
+                       comments: json
+                   })
+               }).catch((err)=>{
+               console.log(err);
+           });
+           fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getuc&userid="  + sessionStorage.userId, myFetchOptions)
+               .then(response => response.json())
+               .then(json => {
+                   this.setState({
+                       collections: json
+                   })
+               }).catch((err)=>{
+               console.log(err);
+           })
+       }
     }
 
     //点击关闭图片预览

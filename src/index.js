@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router'
 import MediaQuery from 'react-responsive';
-import 'antd/dist/antd.css'
 import PcIndex from './js/pages/pc_index';
 import MobileIndex from "./js/pages/mobile_index";
 import MobileContainer from './js/components/mobile_container'
@@ -21,7 +20,6 @@ ReactDOM.render(
                     <IndexRoute component={PCNewsContainer}/>
                     <Route path='details/:uniquekey' component={PCNewsDetails}/>
                     <Route path='userCenter' component={PCUserCenter}/>
-
                 </Route>
             </Router>
 

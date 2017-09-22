@@ -2,7 +2,7 @@
  * Created by 10343 on 2017/7/13.
  */
 import React from 'react'
-import {Link} from 'react-router'
+import {Link,hashHistory} from 'react-router'
 import {
     Row
     , Col
@@ -37,7 +37,8 @@ class PCHeader extends React.Component {
 
 //存储用户信息
     componentWillMount() {
-        if (sessionStorage.userId !== undefined) {
+        console.log(sessionStorage);
+        if (sessionStorage.userId) {
             this.setState({hasLogin: true});
             this.setState({userNickName: sessionStorage.userNickName, userId: sessionStorage.userId});
         }
@@ -93,7 +94,6 @@ class PCHeader extends React.Component {
         };
         this.props.form.validateFields((err, values) => {
             if (!err) {
-
                 fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=" + this.state.action
                     + "&username=" + values.userName + "&password=" + values.password
                     + "&r_userName=" + values.r_userName + "&r_password="
@@ -107,20 +107,20 @@ class PCHeader extends React.Component {
                         });
                         sessionStorage.userId = json.UserId;
                         sessionStorage.userNickName = json.NickUserName;
+                        if (this.state.action === "login") {
+                            this.setState({hasLogin: true});
+                        }
                     })
                     .catch(function (err) {
                         console.warn("Fetch错误:" + err);
                         message.error("请求失败！");
 
                     });
-                if (this.state.action === "login") {
-                    this.setState({hasLogin: true});
-                }
+
                 this.setState({
                     modalShow: false,
                 })
-            }
-            else {
+            } else {
                 message.error("请求失败！");
                 return false
 
@@ -129,6 +129,7 @@ class PCHeader extends React.Component {
     };
     // 退出登录
     logout = () => {
+        hashHistory.push('/');
         sessionStorage.userId = '';
         sessionStorage.userNickName = '';
         this.setState({hasLogin: false});
